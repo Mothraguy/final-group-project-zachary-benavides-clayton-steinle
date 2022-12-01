@@ -109,5 +109,6 @@ def home():
 @app.rout('/create_account')
 def new_user():
     """creates new user"""
+    return render_template('login.htm', info='User created')
 
 """""""""""""""""""""""""""""""fix?"""""""""""""""""""""""""""""""""""""""""
