@@ -12,9 +12,10 @@
 > Forcing myself to fit a login system into this project didn't make sense. I only did it to fit the rubric, when in reality this website would function just fine without it. Personally, I'd remove it.
 > I don't like working with databases either. I don't see a use for the database here as well other than for keeping track of the login system. Overall, I'd remove both these features.
 ### What Clayton Enjoyed In This Project
-> placeholder
+> I enjoyed working with someone else who was more easily able to help me figure out my code due to them also working on the same code rather than explain what is hapening and what does what every time i needed help
 ### What Clayton Didn't Enjoy In This Project
-> placeholder
+> html.
+> i didnt really think that the data base was needed for our app and trying to figure it and the login out was very confusing and frusturating
 ## Technical Requirements
 ### [Fly.io!](https://fly.io/)
 #### Learn how to launch an app here.
