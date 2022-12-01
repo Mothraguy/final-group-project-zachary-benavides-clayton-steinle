@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <style>
+            body {
+              font-family: 'Brush Script MT', cursive;
+              color:whitesmoke;
+            }
+            </style>
+        <style>
+            img {
+                border: 5px solid rgb(158, 137, 45)
+            }
+        </style>
     </head>
-    <body>
+    <body style="background-color:rgb(32,28,28)">
         <h1 p style = "text-align:center">San Marcos Random Restaurant Generator</h1>
         <h2 p style = "text-align:center">{{restaurant_name}}</h2>
         <h2 p style = "text-align:center">{{restaurant_price}}</h2>
         <h2 p style = "text-align:center">{{restaurant_address}}</h2>
         <h2 p style = "text-align:center">{{restaurant_is_open}}</h2>
-        <p style="text-align:center;"><img src = "{{restaurant_image_url}}"></p>
+        <p style="text-align:center;"><img src = "{{restaurant_image_url}}" alt="Yum!" style=""></p>
     </body>
 </html>
