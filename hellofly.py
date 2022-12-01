@@ -11,7 +11,10 @@ from flask_sqlalchemy import SQLAlchemy
 load_dotenv(find_dotenv())
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+
+""" VVV Put DATABASE URI here! VVV """
+app.config['SQLALCHEMY_DATABASE_URI'] = ''
+
 db = SQLAlchemy(app)
 
 class Person(db.Model):
@@ -34,18 +37,36 @@ def index():
         app.run(debug=True)    
     people = Person.query.all()
 
-    YELP_API_REQUEST = f'https://api.yelp.com/v3/businesses/search'
+    ENDPOINT = 'https://api.yelp.com/v3/businesses/search'
+
+    """ VVV Put API Key Here VVV """
+    key = ''
+
     headers = {
-        'Authorization': 'Bearer %s' % os.getenv('YELP_API_KEY')
+        'Authorization': 'Bearer %s' % key
     }
-    parameters = {'location': 'San Marcos, TX',
-                  'radius': 50,
-                  'limit': 3}
 
-    response = requests.get(
-        YELP_API_REQUEST, headers=headers, params=parameters
-    )
+    parameters = {'location': 'San Marcos',
+                'term': 'Restaurant',
+                'radius': 5000,
+                 'limit': 3}
 
-    json_data = response.json()
+    response = requests.get(url = ENDPOINT, headers=headers, params=parameters)
 
-    return render_template('hello.html')
+    business_data = response.json()
+
+    print(business_data)
+    restaurant_name = ''
+    restaurant_price = ''
+    restaurant_address = ''
+
+    for biz in business_data['businesses']:
+        restaurant_name = (biz['name'])
+        restaurant_price = (biz['price'])
+        restaurant_address = (biz['location']['address1'])
+
+    print(restaurant_name)
+    print(restaurant_price)
+    print(restaurant_address)
+
+    return render_template('hello.html', restaurant_name=restaurant_name, restaurant_price=restaurant_price, restaurant_address=restaurant_address)
