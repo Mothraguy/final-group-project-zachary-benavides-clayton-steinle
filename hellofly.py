@@ -21,6 +21,7 @@ class Person(db.Model):
     """Our database for logging in."""
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(80), unique=False, nullable=False)
 
     def __repr__(self) -> str:
         return f"Person with username: {self.username}"
@@ -47,9 +48,10 @@ def index():
     }
 
     parameters = {'location': 'San Marcos',
-                'term': 'Restaurant',
-                'radius': 5000,
-                 'limit': 3}
+                 'term': 'Restaurant',
+                 'radius': 5000,
+                 'limit': 3,
+                 'catagories': 'resturants, nightlife, arts'}
 
     response = requests.get(url = ENDPOINT, headers=headers, params=parameters)
 
