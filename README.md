@@ -5,6 +5,8 @@
 ### Zach's Pull Requests
 #### [1](https://github.com/Mothraguy/final-group-project-zachary-benavides-clayton-steinle/pull/1)
 #### [2](https://github.com/Mothraguy/final-group-project-zachary-benavides-clayton-steinle/pull/2)
+### Clayton's Pull Requests
+#### [1](https://github.com/Mothraguy/final-group-project-zachary-benavides-clayton-steinle/pull/7)
 ### What Zach Enjoyed In This Project
 > I really enjoyed fiddling with this API because it made me feel like I was actually manipulating data even if it was at the most basic level. I feel like I also learned better usage of dictionaries from this.
 > I also really enjoyed actually making a website that has a functionality to it. It's something that I'd actually come back and use for whenever I want to find food in another city.
