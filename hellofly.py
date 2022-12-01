@@ -7,10 +7,22 @@ import requests
 from dotenv import find_dotenv, load_dotenv
 from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
+###################################################
+from flask_login import LoginManager
+login_manager = LoginManager()
+###################################################
 
 load_dotenv(find_dotenv())
 
 app = Flask(__name__)
+
+###################################################
+login_manager.init_app(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Person.username.get(user_id)
+###################################################
 
 """ VVV Put DATABASE URI here! VVV """
 app.config['SQLALCHEMY_DATABASE_URI'] = ''
@@ -80,25 +92,30 @@ def index():
         restaurant_is_closed = 'Open'
     
 ########################################################################
-    return render_template('login.html')
+    return render_template('login.html',  restaurant_name=restaurant_name, restaurant_price=restaurant_price,
+     restaurant_address=restaurant_address, restaurant_image_url=restaurant_image_url, restaurant_is_closed=restaurant_is_closed)
 
-@app.route('/form_login', methods=['POST', 'GET'])
-def check_user():
+@app.route('/login', methods=['POST', 'GET'])
+def login():
     """validates user"""
     User=request.form['username']
 
-    if User not in Person:
-        return render_template('new_user.html')
+    form=LoginForm()
+    if form.validate_on_submit():
+        login_user(User)
 
-    else:
-        if Person[User]:
-            return render_template('hello.html', restaurant_name=restaurant_name, restaurant_price=restaurant_price,
-                restaurant_address=restaurant_address, restaurant_image_url=restaurant_image_url, restaurant_is_closed=restaurant_is_closed)
+        flask.flash('Logged in successfully.')
 
-        else:
-            return render_template('login.html', info='Invalid username')
+        next = flask.request.args.get('next')
 
-@app.route('/home')
+        if not is_safe_url(next):
+            return flask.abort(400)
+
+        return flask.redirect(next or flask.url_for('index'))
+    return render_template ('login.html', form=form)
+
+
+@app.route('/home', methods=['POST', 'GET'])
 def home():
     """to main page"""
     return render_template('hello.html', restaurant_name=restaurant_name, restaurant_price=restaurant_price,
