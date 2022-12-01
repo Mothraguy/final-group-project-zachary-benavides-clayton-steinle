@@ -51,7 +51,7 @@ def index():
                  'term': 'Restaurant',
                  'radius': 5000,
                  'limit': 3,
-                 'catagories': 'resturants, nightlife, arts'}
+                 'catagories': 'resturants'}
 
     response = requests.get(url = ENDPOINT, headers=headers, params=parameters)
 
