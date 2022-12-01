@@ -83,7 +83,7 @@ def index():
     """""""""""""""""""""""""""""""fix?"""""""""""""""""""""""""""""""""""""""""""
     return render_template('login.html')
 
-@app.route('/form_login', methods=['POOST', 'GET'])
+@app.route('/form_login', methods=['POST', 'GET'])
 def check_user():
     """validates user"""
     User=request.form['username']
@@ -106,8 +106,18 @@ def home():
     return render_template('hello.html', restaurant_name=restaurant_name, restaurant_price=restaurant_price,
      restaurant_address=restaurant_address, restaurant_image_url=restaurant_image_url, restaurant_is_closed=restaurant_is_closed)
 
-@app.rout('/create_account')
+@app.rout('/create_account',methods=['POST', 'GET'])
 def new_user():
     """creates new user"""
+    count = 0
+    for i in Person:
+        count++
+    person = Person(id = count,
+                    username = request.form['username'],
+                    password = request.form['password'])
+    db.session.add(person)
+    db.session.commit()
+
+    return render_template('login.htm', info='User created')
 
 """""""""""""""""""""""""""""""fix?"""""""""""""""""""""""""""""""""""""""""
