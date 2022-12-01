@@ -30,3 +30,8 @@ purpose is to fufill the rubrick requirments.
 ### You can edit the search parameters in our .py file to whatever city you like, and find restaurants there!
 ## Known Bugs
 ### Some restaurants will be unable to load properly, resulting in "Internal Server Error." This is due to some restaurants not having the appropriate variables we're asking form.
+<<<<<<< login_function
+### Some restaurants will be unable to load properly, resulting in "Internal Server Error." This is due to some restaurants not having the appropriate variables we're asking form.
+=======
+### Some restaurants will be unable to load properly, resulting in "Internal Server Error." This is due to some restaurants not having the appropriate variables we're asking form.
+>>>>>>> main
