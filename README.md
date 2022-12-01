@@ -2,9 +2,9 @@
 ## [Our Site!](https://long-silence-6282.fly.dev/)
 ## [Our Group Planning](https://docs.google.com/document/d/1wktLUF536iGVRlM_Io-guxi5iHgNSC44LhCqXgNwNW4/edit?usp=sharing)
 ## [Our GitHub](https://github.com/Mothraguy/final-group-project-zachary-benavides-clayton-steinle)
-## Zach's Pull Requests
-### [1](https://github.com/Mothraguy/final-group-project-zachary-benavides-clayton-steinle/pull/1)
-### [2](https://github.com/Mothraguy/final-group-project-zachary-benavides-clayton-steinle/pull/2)
+### Zach's Pull Requests
+#### [1](https://github.com/Mothraguy/final-group-project-zachary-benavides-clayton-steinle/pull/1)
+#### [2](https://github.com/Mothraguy/final-group-project-zachary-benavides-clayton-steinle/pull/2)
 ### What Zach Enjoyed In This Project
 > I really enjoyed fiddling with this API because it made me feel like I was actually manipulating data even if it was at the most basic level. I feel like I also learned better usage of dictionaries from this.
 > I also really enjoyed actually making a website that has a functionality to it. It's something that I'd actually come back and use for whenever I want to find food in another city.
