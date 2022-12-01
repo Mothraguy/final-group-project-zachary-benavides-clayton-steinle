@@ -9,9 +9,13 @@
 > Forcing myself to fit a login system into this project didn't make sense. I only did it to fit the rubric, when in reality this website would function just fine without it. Personally, I'd remove it.
 > I don't like working with databases either. I don't see a use for the database here as well other than for keeping track of the login system. Overall, I'd remove both these features.
 ### What Clayton Enjoyed In This Project
-> placeholder
+> I enjoyed making a functioning website and i think working alongside with someone i learned
+more about html and api's than working in the solo projects it allowed me to have someone who
+could easily look at my code and help me understand where my problems are
 ### What Clayton Didn't Enjoy In This Project
-> placeholder
+> html.
+>I also agreed with Zack the database isnt needed per say for our website in particular its only
+purpose is to fufill the rubrick requirments.
 ## Technical Requirements
 ### [Fly.io!](https://fly.io/)
 #### Learn how to launch an app here.
@@ -19,6 +23,3 @@
 ### [Get a Yelp API key!](https://www.yelp.com/developers/v3/manage_app)
 #### You need this in order to get our app to run for you.
 ### Place the Yelp API key and the Database URI inside of the .py file under the specified variables
-## Additional Tidbits
-### .Env doesn't work for whatever reason. Any variable taken from here makes the program crash, but otherwise, is fine. No clue why.
-### You can edit the search parameters in our .py file to whatever city you like, and find restaurants there!
