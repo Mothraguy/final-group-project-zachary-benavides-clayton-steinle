@@ -50,8 +50,7 @@ def index():
     parameters = {'location': 'San Marcos',
                  'term': 'Restaurant',
                  'radius': 5000,
-                 'limit': 3,
-                 'catagories': 'resturants'}
+                 'limit': 3}
 
     response = requests.get(url = ENDPOINT, headers=headers, params=parameters)
 
