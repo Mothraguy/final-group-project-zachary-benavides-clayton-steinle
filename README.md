@@ -22,3 +22,5 @@
 ## Additional Tidbits
 ### .Env doesn't work for whatever reason. Any variable taken from here makes the program crash, but otherwise, is fine. No clue why.
 ### You can edit the search parameters in our .py file to whatever city you like, and find restaurants there!
+## Known Bugs
+### Some restaurants will be unable to load properly, resulting in "Internal Server Error." This is due to some restaurants not having the appropriate variables we're asking form.
