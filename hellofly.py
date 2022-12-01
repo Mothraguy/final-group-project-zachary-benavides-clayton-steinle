@@ -21,7 +21,6 @@ class Person(db.Model):
     """Our database for logging in."""
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    password = db.column(db.String(80), unique=False, nullable=False)
 
     def __repr__(self) -> str:
         return f"Person with username: {self.username}"
@@ -80,25 +79,24 @@ def index():
     else:
         restaurant_is_closed = 'Open'
     
-    """""""""""""""""""""""""""""""fix?"""""""""""""""""""""""""""""""""""""""""""
+########################################################################
     return render_template('login.html')
 
 @app.route('/form_login', methods=['POST', 'GET'])
 def check_user():
     """validates user"""
     User=request.form['username']
-    Pwd=request.form['password']
 
     if User not in Person:
-        return render_template('new_user')
+        return render_template('new_user.html')
 
     else:
-        if Person[User]!=Pwd:
-            return render_template('login.html', info='Invalid Password')
+        if Person[User]:
+            return render_template('hello.html', restaurant_name=restaurant_name, restaurant_price=restaurant_price,
+                restaurant_address=restaurant_address, restaurant_image_url=restaurant_image_url, restaurant_is_closed=restaurant_is_closed)
 
         else:
-            return render_template('hello.html', restaurant_name=restaurant_name, restaurant_price=restaurant_price,
-     restaurant_address=restaurant_address, restaurant_image_url=restaurant_image_url, restaurant_is_closed=restaurant_is_closed)
+            return render_template('login.html', info='Invalid username')
 
 @app.route('/home')
 def home():
@@ -111,13 +109,13 @@ def new_user():
     """creates new user"""
     count = 0
     for i in Person:
-        count++
+        count = count + 1
+
     person = Person(id = count,
-                    username = request.form['username'],
-                    password = request.form['password'])
+                    username = request.form['username'])
     db.session.add(person)
     db.session.commit()
 
     return render_template('login.htm', info='User created')
 
-"""""""""""""""""""""""""""""""fix?"""""""""""""""""""""""""""""""""""""""""
+#####################################################################
