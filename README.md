@@ -17,6 +17,12 @@
 > html.
 > i didnt really think that the data base was needed for our app and trying to figure it and the login out was very confusing and frusturating
 ## Technical Requirements
+### Flask server
+### Postgres database
+### REST API Integration (Yelp)
+### User Login
+### Beautification
+## How to Run
 ### [Fly.io!](https://fly.io/)
 #### Learn how to launch an app here.
 ### Download our Git!
