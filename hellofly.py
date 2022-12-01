@@ -13,7 +13,7 @@ load_dotenv(find_dotenv())
 app = Flask(__name__)
 
 """ VVV Put DATABASE URI here! VVV """
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:IjV6w6UN41ga4Tq@long-silence-6282-db.internal:5432'
+app.config['SQLALCHEMY_DATABASE_URI'] = ''
 
 db = SQLAlchemy(app)
 
@@ -40,7 +40,7 @@ def index():
     ENDPOINT = 'https://api.yelp.com/v3/businesses/search'
 
     """ VVV Put API Key Here VVV """
-    key = 'VJFY8V0sueomVwnKd8j9CvryLMtuJBfMitN2_GPNAKa8YjIXCyzGsOngs1pargTGNk2Jb4jy50PZi24Yzb1lyr12m773jXkyE71A9oLs28l6Qkg-yOFzJnfq8XqGY3Yx'
+    key = ''
 
     headers = {
         'Authorization': 'Bearer %s' % key
